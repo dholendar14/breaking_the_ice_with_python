@@ -14,15 +14,17 @@ Then, the output should be:
 
 500 """
 
-w = []
+
 total = 0
 while True:
     x = input()
+    w = []
     if len(x) == 0:
         break
-    w.append(x.split(" "))
-    if(w[0].lower() == 'd'):
-        total += int(w[1])
-    elif(w[0].lower() == 'w'):
-        total -= int(w[1])
+    w = x.split(" ")
+    for item in w:
+        if(item.lower() == 'd'):
+            total += int(w[1])
+        elif(item.lower() == 'w'):
+            total -= int(w[1])
 print(total)
